@@ -3,8 +3,15 @@ import { Platform, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { useLocalSearchParams, usePathname, useRouter } from 'expo-router';
 
 export default function ModalScreen() {
+  const router = useRouter()
+  const pathName = usePathname()
+  const lcl = useLocalSearchParams()
+  console.log("router", router)
+  console.log("pathName", pathName)
+  console.log("lcl", lcl)
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>

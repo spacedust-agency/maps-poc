@@ -1,22 +1,25 @@
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from "react-native";
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
-import Container from '../../components/Container';
-import { useAllTreks } from '../../hooks/trek';
-import { useRouter, usePathname, Link } from 'expo-router';
-import { FontAwesome } from '@expo/vector-icons';
+import { useRouter, usePathname, Link } from "expo-router";
+import { FontAwesome } from "@expo/vector-icons";
+import Container from "../components/Container";
+import EditScreenInfo from "../components/EditScreenInfo";
+import { Text, View } from "../components/Themed";
 
 export default function TabTwoScreen() {
   // const trekData = useAllTreks();
-  const router = useRouter()
-  const pathName = usePathname()
+  const router = useRouter();
+  const pathName = usePathname();
   return (
     <Container>
       <>
         <View style={styles.container}>
           <Text style={styles.title}>Tab Two</Text>
-          <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+          <View
+            style={styles.separator}
+            lightColor="#eee"
+            darkColor="rgba(255,255,255,0.1)"
+          />
           <EditScreenInfo path="app/(tabs)/two.tsx" />
         </View>
         <Link href={`/modal?number=${10}`} asChild>
@@ -38,16 +41,16 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
   },
 });

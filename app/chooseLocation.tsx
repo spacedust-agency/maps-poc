@@ -41,9 +41,7 @@ const chooseLocation = (props: any) => {
   }
 
   const fetchDestinationCords = (lat: any, lng: any = null,zipCode:any,cityText:any) => {
-    console.log("zip code==>>>",zipCode)
-    console.log("city==>>>",cityText)
-    console.log("props",props)
+    
     setState({
       ...state,
       destinationCords: {
